@@ -1,0 +1,25 @@
+ALGORITHM withtable
+VAR
+   set1 : ARRAY_OF INTEGER[];
+   set2 : ARRAY_OF INTEGER[];
+   arr : ARRAY_OF INTEGER[];
+   sum:INTEGER :=0;
+   test:BOOLEAN;
+   i,j:INTEGER;
+BEGIN
+   arr := set1.concat(set2);
+   FOR i FROM 0 TO arr.length STEP 1  DO
+       test=false;
+       FOR j FROM i+1 TO arr.length STEP 1  DO
+
+        IF (arr[i] = arr[j]) THEN
+            test = true;
+        END_IF
+       END_FOR
+IF (test=true) THEN
+    sum:=sum + arr[i];
+END_IF
+
+   END_FOR
+ write(sum);
+END
